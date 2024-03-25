@@ -7,7 +7,7 @@ export default function ArtPieces({pieces}){
             <li key={piece.slug}>
                 <h1>{piece.name}</h1>
                 <p>{piece.artist}</p>
-                <img width={"200px"} src={piece.imageSource} alt={piece.name}></img>
+                <a href={`/art-pieces/${piece.slug}`}><img width={"200px"} src={piece.imageSource} alt={piece.name}></img></a>
             </li>))}
         </ul>
     )
