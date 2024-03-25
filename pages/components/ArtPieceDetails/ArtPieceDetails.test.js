@@ -1,13 +1,6 @@
 import {screen, render} from "@testing-library/react";
 import ArtPieceDetails from "./ArtPieceDetails";
 
-// The art piece image is displayed 🖼️
-// The art piece title is displayed 🖼️
-// The art piece artist is displayed 🖼️
-// The art piece year is displayed 🖼️
-// The art piece genre is displayed 🖼️
-// A back-button is displayed 🖼️
-
 test("back button and art piece image, title, artist, year and genre are displayed", () => {
     render (<ArtPieceDetails
     name= "Orange Red and Green Abstract Painting"
@@ -18,19 +11,16 @@ test("back button and art piece image, title, artist, year and genre are display
     ></ArtPieceDetails>)
 
     const button = screen.getByRole("button", {name: /back/i});
-    const image = screen.getBy
+    const image = screen.getByAltText("Orange Red and Green Abstract Painting");
+    const artist = screen.getByText("Steve Johnson");
+    const year = screen.getByText("2018");
+    const genre = screen.getByText("Abstract Painting");
 
-});
-
-test("art piece title is displayed", () => {
-
-});
-
-test("art piece artist, year and genre are displayed", () => {
-
-});
-
-test("a back-button is displayed", () => {
+    expect(button).toBeInTheDocument();
+    expect(image).toBeInTheDocument();
+    expect(artist).toBeInTheDocument();
+    expect(year).toBeInTheDocument();
+    expect(genre).toBeInTheDocument();
 
 });
 
