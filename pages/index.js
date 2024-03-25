@@ -1,16 +1,15 @@
 import useSWR from "swr";
+import ArtPieces from "./components/ArtPieces/ArtPieces";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-export default function ArtPieces() {
-  const {data} = useSWR(`https://example-apis.vercel.app/api/art`, fetcher);
-  if (!data || data.length === 0) {
-    return <div>Loading...</div>;
-  }
-  console.log(data[0]);
+export default function FetchArtPieces() {
+  const {data: pieces, error, isLoading} = useSWR(`https://example-apis.vercel.app/api/art`, fetcher);
+  if (error) return <div>Failed to Load</div>
+  if (isLoading) return <div>loading...</div>
 
-  // return (
-
-  // )
+  return (
+    <ArtPieces pieces={pieces} />
+  )
 }
 
