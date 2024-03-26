@@ -1,8 +1,10 @@
+import Link from "next/link"
+
 export default function Navigation () {
     return(
         <nav>
-            <li> <a href="/">Spotlight</a></li>
-            <li> <a href="/art-pieces">Art Pieces</a></li>
+            <li> <Link href="/">Spotlight</Link></li>
+            <li> <Link href="/art-pieces">Art Pieces</Link></li>
         </nav>
     )
 }
