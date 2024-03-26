@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }) {
   //Favorite Button
   const [artPiecesInfo, setArtPiecesInfo] = useState([]);
   console.log("artPiecesInfo", artPiecesInfo);
-  function handleToggleFavourite(slug) {
+  function handleToggleFavorite(slug) {
     const artPiece = artPiecesInfo.find((piece) => piece.slug === slug);
     if (artPiece) {
       setArtPiecesInfo(
@@ -39,7 +39,7 @@ export default function App({ Component, pageProps }) {
       <Component
         {...pageProps}
         pieces={pieces}
-        onToggleFavorite={handleToggleFavourite}
+        onToggleFavorite={handleToggleFavorite}
         artPiecesInfo={artPiecesInfo}
       />
     </>
