@@ -8,6 +8,7 @@ test("back button and art piece image, title, artist, year and genre are display
     img="https://example-apis.vercel.app/assets/art/orange-red-and-green.jpg"
     year="2018"
     genre="Abstract Painting"
+    artPiecesInfo={[""]}
     ></ArtPieceDetails>)
 
     const button = screen.getByRole("button", {name: /back/i});
