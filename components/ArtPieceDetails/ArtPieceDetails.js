@@ -2,6 +2,12 @@ import Link from "next/link";
 import FavoriteButton from "../FavortieButton/FavoriteButton";
 import CommentForm from "../CommentForm/CommentForm";
 import Comments from "../Comments/Comments";
+import styled from "styled-components";
+
+const StyledListItem = styled.div`
+padding:25px;
+width: 30px;
+background-color: ${(props) => props.color};`
 
 export default function ArtPieceDetails({
   name,
@@ -18,7 +24,7 @@ export default function ArtPieceDetails({
   colors
 }) {
 
-console.log(colors);
+
 
   return (
     <div>
@@ -31,9 +37,10 @@ console.log(colors);
         <li>{year}</li>
         <li>{genre}</li>
       </ul>
+     
         {colors.map((color, index) => (
-          <div key={index}>{color}</div>
-        ))}
+          <StyledListItem key={index} color={color}>{color}</StyledListItem>
+))}
       <img width={"200px"} src={img} alt={name}></img>
       <FavoriteButton
         onToggleFavorite={onToggleFavorite}
@@ -46,5 +53,4 @@ console.log(colors);
   );
 }
 
-// const StyledDiv = styled.div`
-// padding:25px`;
+
