@@ -26,6 +26,7 @@ export default function ArtPieceDetailsPage({
   return (
     <ArtPieceDetails
       slug={selectedArtPiece.slug}
+      colors={selectedArtPiece.colors}
       name={selectedArtPiece.name}
       artist={selectedArtPiece.artist}
       year={selectedArtPiece.year}

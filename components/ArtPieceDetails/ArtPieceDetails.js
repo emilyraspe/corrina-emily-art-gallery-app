@@ -14,10 +14,11 @@ export default function ArtPieceDetails({
   isFavorite,
   artPiecesInfo,
   comments,
-  addComment
+  addComment,
+  colors
 }) {
 
-console.log(addComment);
+console.log(colors);
 
   return (
     <div>
@@ -30,6 +31,9 @@ console.log(addComment);
         <li>{year}</li>
         <li>{genre}</li>
       </ul>
+        {colors.map((color, index) => (
+          <div key={index}>{color}</div>
+        ))}
       <img width={"200px"} src={img} alt={name}></img>
       <FavoriteButton
         onToggleFavorite={onToggleFavorite}
@@ -41,3 +45,6 @@ console.log(addComment);
     </div>
   );
 }
+
+// const StyledDiv = styled.div`
+// padding:25px`;

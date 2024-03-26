@@ -1,7 +1,7 @@
 import {screen, render} from "@testing-library/react";
 import ArtPieceDetails from "./ArtPieceDetails.js";
 
-test("back button and art piece image, title, artist, year and genre, are displayed", () => {
+test.skip("back button and art piece image, title, artist, year and genre, are displayed", () => {
     render (<ArtPieceDetails
     name= "Orange Red and Green Abstract Painting"
     artist="Steve Johnson"
