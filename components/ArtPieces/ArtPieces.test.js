@@ -1,5 +1,5 @@
 import {render, screen} from "@testing-library/react";
-import ArtPieces from "./ArtPieces";
+import ArtPieces from "./ArtPieces.js";
 
 const mockPieces = [
     { slug: "piece-1", name: "Piece 1", artist: "Artist 1", imageSource: "image1.jpg" },

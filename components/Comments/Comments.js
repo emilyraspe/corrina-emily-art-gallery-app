@@ -2,6 +2,7 @@ export default function Comments({comments}) {
     console.log(comments)
     return(
         <div>
+            <h2>Comments</h2>
             {comments && comments.length > 0 ? (
                 <ul>
                     {comments.map((comment, index) => (

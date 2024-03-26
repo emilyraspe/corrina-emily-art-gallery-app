@@ -1,7 +1,7 @@
 import {screen, render} from "@testing-library/react";
-import ArtPieceDetails from "./ArtPieceDetails";
+import ArtPieceDetails from "./ArtPieceDetails.js";
 
-test.skip("back button and art piece image, title, artist, year and genre are displayed", () => {
+test("back button and art piece image, title, artist, year and genre are displayed", () => {
     render (<ArtPieceDetails
     name= "Orange Red and Green Abstract Painting"
     artist="Steve Johnson"
@@ -23,3 +23,7 @@ test.skip("back button and art piece image, title, artist, year and genre are di
     expect(genre).toBeInTheDocument();
 });
 
+
+// The detail view has a list of comments for this art piece with the headline "Comments" 🖼️
+// The detail view has an input field to write a comment 🖼️
+// The detail view has a submit button labeled "Send" 🖼️
