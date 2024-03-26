@@ -1,8 +1,10 @@
-import useSWR from "swr";
-import ArtPieces from "./components/ArtPieces/ArtPieces";
-import Spotlight from "./components/Spotlight/Spotlight";
+import Spotlight from "../components/Spotlight/Spotlight";
 
-export default function SpotlightPage({ pieces }) {
+export default function SpotlightPage({
+  pieces,
+  onToggleFavorite,
+  artPiecesInfo,
+}) {
   const spotlightPiece =
     pieces[Math.floor(Math.random() * (pieces.length - 1))];
 
@@ -14,6 +16,9 @@ export default function SpotlightPage({ pieces }) {
       <Spotlight
         image={spotlightPiece.imageSource}
         artist={spotlightPiece.artist}
+        slug={spotlightPiece.slug}
+        onToggleFavorite={onToggleFavorite}
+        artPiecesInfo={artPiecesInfo}
       ></Spotlight>
     </>
   );
