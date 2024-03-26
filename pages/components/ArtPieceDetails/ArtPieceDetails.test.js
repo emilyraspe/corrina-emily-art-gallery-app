@@ -21,6 +21,5 @@ test("back button and art piece image, title, artist, year and genre are display
     expect(artist).toBeInTheDocument();
     expect(year).toBeInTheDocument();
     expect(genre).toBeInTheDocument();
-
 });
 
