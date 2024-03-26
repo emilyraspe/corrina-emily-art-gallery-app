@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import Navigation from "../../components/Navigation/Navigation";
-import ArtPieces from "../../components/ArtPieces/ArtPieces";
+import Navigation from "../Navigation/Navigation";
+import ArtPieces from "../ArtPieces/ArtPieces";
 
 test("navigation link labeled Favorites is displayed", () => {
   render(<Navigation></Navigation>);
