@@ -2,13 +2,13 @@ import GlobalStyle from "../styles";
 import useSWR from "swr";
 import Layout from "../components/Layout/Layout";
 import { useState } from "react";
-import useLocalStorageState from "use-local-storage-state";
+import { useImmerLocalStorageState } from "../lib/hook/useImmerLocalStorageState.js";
 
 const fetcher = async (url) => await fetch(url).then((res) => res.json());
 
 export default function App({ Component, pageProps }) {
   //Favorite Button
-  const [artPiecesInfo, setArtPiecesInfo] = useLocalStorageState(
+  const [artPiecesInfo, setArtPiecesInfo] = useImmerLocalStorageState(
     "artPiecesInfo",
     { defaultValue: [] }
   );
@@ -20,7 +20,9 @@ export default function App({ Component, pageProps }) {
     if (artPiece) {
       setArtPiecesInfo(
         artPiecesInfo.map((piece) =>
-          piece.slug === slug ? { slug, isFavorite: !piece.isFavorite } : piece
+          piece.slug === slug
+            ? { ...piece, isFavorite: !piece.isFavorite }
+            : piece
         )
       );
     } else {
@@ -36,7 +38,10 @@ export default function App({ Component, pageProps }) {
         artPiecesInfo.map((pieceInfo) => {
           if (pieceInfo.slug === slug) {
             return pieceInfo.comments
-              ? { ...pieceInfo, comments: [...pieceInfo.comments, newComment] }
+              ? {
+                  ...pieceInfo,
+                  comments: [...pieceInfo.comments, newComment],
+                }
               : { ...pieceInfo, comments: [newComment] };
           } else {
             return pieceInfo;
@@ -44,10 +49,7 @@ export default function App({ Component, pageProps }) {
         })
       );
     } else {
-      setArtPiecesInfo([
-        ...artPiecesInfo,
-        { slug, isFavorite: false, comments: [newComment] },
-      ]);
+      setArtPiecesInfo([...artPiecesInfo, { slug, comments: [newComment] }]);
     }
   }
 
@@ -58,7 +60,6 @@ export default function App({ Component, pageProps }) {
   } = useSWR(`https://example-apis.vercel.app/api/art`, fetcher);
   if (error) return <div>Failed to Load</div>;
   if (isLoading) return <div>loading...</div>;
-
 
   return (
     <>
