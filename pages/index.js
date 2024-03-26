@@ -1,9 +1,10 @@
-import useSWR from "swr";
-import ArtPieces from "../components/ArtPieces/ArtPieces";
 import Spotlight from "../components/Spotlight/Spotlight";
-import FavoriteButton from "../components/FavortieButton/FavoriteButton";
 
-export default function SpotlightPage({ pieces, onToggleFavorite }) {
+export default function SpotlightPage({
+  pieces,
+  onToggleFavorite,
+  artPiecesInfo,
+}) {
   const spotlightPiece =
     pieces[Math.floor(Math.random() * (pieces.length - 1))];
 
@@ -17,6 +18,7 @@ export default function SpotlightPage({ pieces, onToggleFavorite }) {
         artist={spotlightPiece.artist}
         slug={spotlightPiece.slug}
         onToggleFavorite={onToggleFavorite}
+        artPiecesInfo={artPiecesInfo}
       ></Spotlight>
     </>
   );
