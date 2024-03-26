@@ -1,5 +1,7 @@
 import Link from "next/link";
 import FavoriteButton from "../FavortieButton/FavoriteButton";
+import CommentForm from "../CommentForm/CommentForm";
+import Comments from "../Comments/Comments";
 
 export default function ArtPieceDetails({
   name,
@@ -11,7 +13,12 @@ export default function ArtPieceDetails({
   onToggleFavorite,
   isFavorite,
   artPiecesInfo,
+  comments,
+  addComment
 }) {
+
+console.log(addComment);
+
   return (
     <div>
       <Link href="/art-pieces">
@@ -29,6 +36,8 @@ export default function ArtPieceDetails({
         slug={slug}
         artPiecesInfo={artPiecesInfo}
       />
+      <CommentForm slug={slug} addComment={addComment}/>
+      <Comments comments={comments}/>
     </div>
   );
 }

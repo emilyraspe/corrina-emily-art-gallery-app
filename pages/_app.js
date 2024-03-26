@@ -22,7 +22,28 @@ export default function App({ Component, pageProps }) {
     }
   }
 
-  //
+  //Comments
+  function addComment(slug, newComment) {
+    const artPiece = artPiecesInfo.find((piece) => piece.slug === slug);
+    if (artPiece) {
+      setArtPiecesInfo(
+        artPiecesInfo.map((pieceInfo) => {
+          if (pieceInfo.slug === slug) {
+            return pieceInfo.comments
+              ? { ...pieceInfo, comments: [...pieceInfo.comments, newComment] }
+              : { ...pieceInfo, comments: [newComment] };
+          } else {
+            return pieceInfo;
+          }
+        })
+      );
+    } else {
+      setArtPiecesInfo([
+        ...artPiecesInfo,
+        { slug, isFavorite: false, comments: [newComment] },
+      ]);
+    }
+  }
 
   const {
     data: pieces,
@@ -31,6 +52,7 @@ export default function App({ Component, pageProps }) {
   } = useSWR(`https://example-apis.vercel.app/api/art`, fetcher);
   if (error) return <div>Failed to Load</div>;
   if (isLoading) return <div>loading...</div>;
+
 
   return (
     <>
@@ -41,6 +63,7 @@ export default function App({ Component, pageProps }) {
         pieces={pieces}
         onToggleFavorite={handleToggleFavorite}
         artPiecesInfo={artPiecesInfo}
+        addComment={addComment}
       />
     </>
   );
