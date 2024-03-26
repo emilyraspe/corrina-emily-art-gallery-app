@@ -2,13 +2,19 @@ import GlobalStyle from "../styles";
 import useSWR from "swr";
 import Layout from "../components/Layout/Layout";
 import { useState } from "react";
+import useLocalStorageState from "use-local-storage-state";
 
 const fetcher = async (url) => await fetch(url).then((res) => res.json());
 
 export default function App({ Component, pageProps }) {
   //Favorite Button
-  const [artPiecesInfo, setArtPiecesInfo] = useState([]);
+  const [artPiecesInfo, setArtPiecesInfo] = useLocalStorageState(
+    "artPiecesInfo",
+    { defaultValue: [] }
+  );
+
   console.log("artPiecesInfo", artPiecesInfo);
+
   function handleToggleFavorite(slug) {
     const artPiece = artPiecesInfo.find((piece) => piece.slug === slug);
     if (artPiece) {
