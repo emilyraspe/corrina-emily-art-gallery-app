@@ -1,7 +1,7 @@
 import {screen, render} from "@testing-library/react";
 import ArtPieceDetails from "./ArtPieceDetails.js";
 
-test("back button and art piece image, title, artist, year and genre are displayed", () => {
+test("back button and art piece image, title, artist, year and genre, are displayed", () => {
     render (<ArtPieceDetails
     name= "Orange Red and Green Abstract Painting"
     artist="Steve Johnson"
@@ -23,8 +23,3 @@ test("back button and art piece image, title, artist, year and genre are display
     expect(year).toBeInTheDocument();
     expect(genre).toBeInTheDocument();
 });
-
-
-// The detail view has a list of comments for this art piece with the headline "Comments" 🖼️
-// The detail view has an input field to write a comment 🖼️
-// The detail view has a submit button labeled "Send" 🖼️
