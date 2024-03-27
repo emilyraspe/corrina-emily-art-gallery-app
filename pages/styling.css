@@ -23,7 +23,7 @@ a:hover {
 .styledDiv {
     display: flex;
     flex-direction: column;
-    width: 600px;
+    width: 500px;
     padding: 25px;
     flex-wrap: wrap;
     align-content: center;
@@ -48,7 +48,7 @@ img {
     border-radius: 30px;
     align-self: center;
     margin: 5px;
-    /* background-color: white; */
+    background-color: white;
 }
 
 h2 {
@@ -62,4 +62,32 @@ h2 {
 .colorDiv{
     display: flex;
     flex-direction: row;
+    margin-top:10px;
+}
+
+ul{
+    padding: 0;
+    text-align:center;
+
+}
+
+form {
+    padding-top:20px;
+    border-top: 1px solid black;
+    margin-top:20px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 10px;
+
+}
+
+.submitButton {
+    width:25%;
+    align-self: center;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    padding: 3px;
+    /* background-color: #eae6e6e0; */
+    background-color: white;
 }

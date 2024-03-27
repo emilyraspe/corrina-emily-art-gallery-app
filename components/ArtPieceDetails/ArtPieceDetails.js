@@ -35,9 +35,9 @@ export default function ArtPieceDetails({
         <Div key={index} color={color}></Div>
       ))}</div>
       <ul>
-        <li>{artist}</li>
-        <li>{year}</li>
-        <li>{genre}</li>
+        <li><strong>Artist:</strong> {artist}</li>
+        <li><strong>Year:</strong> {year}</li>
+        <li><strong>Genre:</strong> {genre}</li>
       </ul>
       <FavoriteButton
         onToggleFavorite={onToggleFavorite}

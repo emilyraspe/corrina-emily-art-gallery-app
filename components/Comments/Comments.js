@@ -5,7 +5,8 @@ export default function Comments({comments}) {
             {comments && comments.length > 0 ? (
                 <ul>
                     {comments.map((comment, index) => (
-                        <li key={index}>{comment.comment} {comment.date}</li>
+                        <li key={index}>{comment.date} <br></br>
+                        {comment.comment} </li>
                     ))}
                 </ul>
             ) : (
