@@ -23,20 +23,22 @@ export default function ArtPieceDetails({
   colors,
 }) {
   return (
-    <div>
-      <Link href="/art-pieces">
-        <button>Back</button>
-      </Link>
+    <>
+    <Link href="/art-pieces">
+    <button>Back</button>
+  </Link>
+    <div className="styledDiv">
       <h1>{name}</h1>
-      <img width={"200px"} src={img} alt={name}></img>
+      <img width={"400px"} src={img} alt={name}></img>
+      <div className="colorDiv">
+      {colors?.map((color, index) => (
+        <Div key={index} color={color}></Div>
+      ))}</div>
       <ul>
         <li>{artist}</li>
         <li>{year}</li>
         <li>{genre}</li>
       </ul>
-      {colors?.map((color, index) => (
-        <Div key={index} color={color}></Div>
-      ))}
       <FavoriteButton
         onToggleFavorite={onToggleFavorite}
         slug={slug}
@@ -44,7 +46,7 @@ export default function ArtPieceDetails({
       />
       <CommentForm slug={slug} addComment={addComment} />
       <Comments comments={comments} />
-    </div>
+    </div></>
   );
 }
 
