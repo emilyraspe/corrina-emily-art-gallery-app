@@ -24,10 +24,10 @@ export default function ArtPieceDetails({
 }) {
   return (
     <>
-    <Link href="/art-pieces">
-    <button>Back</button>
-  </Link>
     <div className="styledDiv">
+      <Link className="backButton" href="/art-pieces">
+      <button className="backButton" >⭠</button>
+      </Link>
       <h1>{name}</h1>
       <img width={"400px"} src={img} alt={name}></img>
       <div className="colorDiv">

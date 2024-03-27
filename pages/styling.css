@@ -91,3 +91,12 @@ form {
     /* background-color: #eae6e6e0; */
     background-color: white;
 }
+
+.backButton {
+    font-size: 40px;
+    border: none;
+    background: none;
+    align-self: flex-start;
+    margin-top:0;
+    line-height: 25px;;
+}
