@@ -34,7 +34,7 @@ export default function ArtPieceDetails({
         <li>{genre}</li>
       </ul>
       {colors?.map((color, index) => (
-        <Div key={index} color={color}></Div>
+        <Div data-testid="colors" key={index} color={color}></Div>
       ))}
       <img width={"200px"} src={img} alt={name}></img>
       <FavoriteButton
