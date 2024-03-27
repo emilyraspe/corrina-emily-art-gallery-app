@@ -4,14 +4,15 @@ import FavoriteButton from "../FavortieButton/FavoriteButton.js";
 
 export default function ArtPieces({ pieces, onToggleFavorite, artPiecesInfo }) {
   return (
+    <div>
     <ul>
       {pieces.map((piece) => (
-        <li key={piece.slug}>
+        <li className="styledDiv" key={piece.slug}>
           <h1>{piece.name}</h1>
-          <p>{piece.artist}</p>
           <Link href={`/art-pieces/${piece.slug}`}>
-            <img width={"200px"} src={piece.imageSource} alt={piece.name}></img>
+            <img className="clickableImg" width={"200px"} src={piece.imageSource} alt={piece.name}></img>
           </Link>
+          <h2>{piece.artist}</h2>
           <FavoriteButton
             onToggleFavorite={onToggleFavorite}
             artPiecesInfo={artPiecesInfo}
@@ -20,5 +21,6 @@ export default function ArtPieces({ pieces, onToggleFavorite, artPiecesInfo }) {
         </li>
       ))}
     </ul>
+    </div>
   );
 }

@@ -28,6 +28,7 @@ export default function ArtPieceDetails({
         <button>Back</button>
       </Link>
       <h1>{name}</h1>
+      <img width={"200px"} src={img} alt={name}></img>
       <ul>
         <li>{artist}</li>
         <li>{year}</li>
@@ -36,7 +37,6 @@ export default function ArtPieceDetails({
       {colors?.map((color, index) => (
         <Div key={index} color={color}></Div>
       ))}
-      <img width={"200px"} src={img} alt={name}></img>
       <FavoriteButton
         onToggleFavorite={onToggleFavorite}
         slug={slug}

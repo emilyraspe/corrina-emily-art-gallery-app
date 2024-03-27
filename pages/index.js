@@ -12,7 +12,6 @@ export default function SpotlightPage({
 
   return (
     <>
-      <h1>Spotlight</h1>
       <Spotlight
         image={spotlightPiece.imageSource}
         artist={spotlightPiece.artist}
