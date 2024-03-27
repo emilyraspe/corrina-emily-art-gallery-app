@@ -62,5 +62,5 @@ test("each artwork's artist, title, and image is displayed", () => {
   expect(image.length).toBe(2);
 
   const heading = screen.getAllByRole("heading");
-  expect(heading.length).toBe(2);
+  expect(heading.length).toBe(4);
 });

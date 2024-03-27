@@ -12,7 +12,7 @@ test("back button and art piece image, title, artist, year and genre, are displa
     colors={[""]}
     ></ArtPieceDetails>)
 
-    const button = screen.getByRole("button", {name: /back/i});
+    const button = screen.getByRole("button", {name: /⭠/i});
     const image = screen.getByAltText("Orange Red and Green Abstract Painting");
     const artist = screen.getByText("Steve Johnson");
     const year = screen.getByText("2018");

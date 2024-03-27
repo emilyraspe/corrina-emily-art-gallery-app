@@ -21,7 +21,7 @@ test("each artwork's image is displayed", () => {
 test("each artwork's title is displayed", () => {
     render (<ArtPieces pieces={mockPieces} artPiecesInfo={[]}></ArtPieces>)
     const heading = screen.getAllByRole("heading");
-    expect(heading.length).toBe(2);
+    expect(heading.length).toBe(4);
 
 }) 
 test("each artwork's artist is displayed", () => {
