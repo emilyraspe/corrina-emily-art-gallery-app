@@ -2,6 +2,15 @@ import { render, screen } from "@testing-library/react";
 import Navigation from "../Navigation/Navigation";
 import ArtPieces from "../ArtPieces/ArtPieces";
 
+jest.mock("next/router", () => ({
+  useRouter() {
+    return {
+      push: jest.fn(),
+      asPath: "/",
+    };
+  },
+}));
+
 test("navigation link labeled Favorites is displayed", () => {
   render(<Navigation></Navigation>);
   const favoriesLink = screen.getByRole("link", { name: "Favorites" });
