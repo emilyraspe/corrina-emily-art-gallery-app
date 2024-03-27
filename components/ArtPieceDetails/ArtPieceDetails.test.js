@@ -1,4 +1,4 @@
-import {screen, render} from "@testing-library/react";
+import { screen, render } from "@testing-library/react";
 import ArtPieceDetails from "./ArtPieceDetails.js";
 
 test("back button and art piece image, title, artist, year and genre, are displayed", () => {
@@ -23,3 +23,4 @@ test("back button and art piece image, title, artist, year and genre, are displa
     expect(year).toBeInTheDocument();
     expect(genre).toBeInTheDocument();
 });
+

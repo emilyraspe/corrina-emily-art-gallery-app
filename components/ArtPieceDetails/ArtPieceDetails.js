@@ -4,11 +4,6 @@ import CommentForm from "../CommentForm/CommentForm";
 import Comments from "../Comments/Comments";
 import styled from "styled-components";
 
-const StyledListItem = styled.div`
-padding:25px;
-width: 30px;
-background-color: ${(props) => props.color};`
-
 export default function ArtPieceDetails({
   name,
   artist,
@@ -21,11 +16,12 @@ export default function ArtPieceDetails({
   artPiecesInfo,
   comments,
   addComment,
-  colors
+
+
+
+
+  colors,
 }) {
-
-
-
   return (
     <div>
       <Link href="/art-pieces">
@@ -37,20 +33,26 @@ export default function ArtPieceDetails({
         <li>{year}</li>
         <li>{genre}</li>
       </ul>
-     
-        {colors.map((color, index) => (
-          <StyledListItem key={index} color={color}>{color}</StyledListItem>
-))}
+      {colors?.map((color, index) => (
+        <Div key={index} color={color}></Div>
+      ))}
       <img width={"200px"} src={img} alt={name}></img>
       <FavoriteButton
         onToggleFavorite={onToggleFavorite}
         slug={slug}
         artPiecesInfo={artPiecesInfo}
       />
-      <CommentForm slug={slug} addComment={addComment}/>
-      <Comments comments={comments}/>
+      <CommentForm slug={slug} addComment={addComment} />
+      <Comments comments={comments} />
     </div>
   );
 }
 
+const Div = styled.div`
+  background-color: ${(props) => props.color};
+  border-radius: 25px;
+  width: 40px;
+  padding: 20px;
+  margin: 10px;
+`;
 
