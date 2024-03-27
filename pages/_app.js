@@ -3,6 +3,7 @@ import useSWR from "swr";
 import Layout from "../components/Layout/Layout";
 import { useState } from "react";
 import { useImmerLocalStorageState } from "../lib/hook/useImmerLocalStorageState.js";
+import "../pages/styling.css"
 
 const fetcher = async (url) => await fetch(url).then((res) => res.json());
 

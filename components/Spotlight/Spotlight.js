@@ -9,14 +9,16 @@ export default function Spotlight({
   artPiecesInfo,
 }) {
   return (
-    <>
+    <div className="styledDiv">
+      <h1>Spotlight</h1>
+      <img width={"400px"} src={image}></img>
+      <h2>{artist}</h2>
       <FavoriteButton
         onToggleFavorite={() => onToggleFavorite(slug)}
         isFavorite={isFavorite}
         artPiecesInfo={artPiecesInfo}
       />
-      <h1>{artist}</h1>
-      <img width={"250px"} src={image}></img>
-    </>
+
+    </div>
   );
 }

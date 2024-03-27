@@ -17,7 +17,7 @@ export default function CommentForm({slug, addComment}){
         <h2>Add a Comment</h2>
         <label htmlFor="comment">Add Comment</label>
         <input id="comment" type="text" name="comment" rows="3" maxLength="200" required></input>
-        <button type="submit">Submit</button>
+        <button className="submitButton" ype="submit">Submit</button>
         {/* {formData.dateTime && <p>Submitted on: {formData.dateTime}</p>} */}
         </form>
     )
