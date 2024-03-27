@@ -4,14 +4,11 @@ import Layout from "../components/Layout/Layout";
 import { useState } from "react";
 import { useImmerLocalStorageState } from "../lib/hook/useImmerLocalStorageState.js";
 import "../pages/styling.css"
-import { usePathname } from 'next/navigation'
 
 const fetcher = async (url) => await fetch(url).then((res) => res.json());
 
 export default function App({ Component, pageProps }) {
 
-  const {pathname} = usePathname()
-  console.log("pathname",pathname)
   //Favorite Button
   const [artPiecesInfo, setArtPiecesInfo] = useImmerLocalStorageState(
     "artPiecesInfo",
