@@ -9,7 +9,7 @@ test("back button and art piece image, title, artist, year and genre, are displa
     year="2018"
     genre="Abstract Painting"
     artPiecesInfo={[""]}
-    colors={[""]}
+    colors={["pink"]}
     ></ArtPieceDetails>)
 
     const button = screen.getByRole("button", {name: /back/i});
@@ -17,10 +17,12 @@ test("back button and art piece image, title, artist, year and genre, are displa
     const artist = screen.getByText("Steve Johnson");
     const year = screen.getByText("2018");
     const genre = screen.getByText("Abstract Painting");
+    const colors= screen.getByTestId("colors")
     expect(button).toBeInTheDocument();
     expect(image).toBeInTheDocument();
     expect(artist).toBeInTheDocument();
     expect(year).toBeInTheDocument();
     expect(genre).toBeInTheDocument();
+    expect(colors).toBeInTheDocument();
 });
 
