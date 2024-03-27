@@ -1,15 +1,5 @@
 import {render, screen} from "@testing-library/react";
-import { useRouter } from "next/router";
 import Layout from "../Layout/Layout";
-
-jest.mock("next/router", () => ({
-    useRouter() {
-      return {
-        push: jest.fn(),
-        asPath: "/",
-      };
-    },
-  }));
 
 test("Navigation link labeled Spotlight & Pieces is displayed", () => {
     render (<Layout></Layout>)
