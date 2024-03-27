@@ -20,6 +20,12 @@ a:hover {
     text-underline-offset: 6px;
 }
 
+a:active {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+
 .styledDiv {
     display: flex;
     flex-direction: column;
@@ -49,6 +55,8 @@ img {
     align-self: center;
     margin: 5px;
     background-color: white;
+    font-size: 12px;
+    padding: 5px;
 }
 
 h2 {
@@ -99,4 +107,8 @@ form {
     align-self: flex-start;
     margin-top:0;
     line-height: 25px;;
+}
+
+button {
+    font-family: "PT Serif", serif;
 }
