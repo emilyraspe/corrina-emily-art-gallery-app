@@ -9,7 +9,7 @@ export default function FavoriteButton({
 
   return (
     <button className="favButton" onClick={() => onToggleFavorite(slug)}>
-      <span>{foundArtPieceInfo?.isFavorite ? "❤️" : "🚫"}</span>
+      <span>{foundArtPieceInfo?.isFavorite ? "❤️" : <i>Add to Favorites</i>}</span>
     </button>
   );
 }
