@@ -16,6 +16,10 @@ export default function ArtPieceDetails({
   artPiecesInfo,
   comments,
   addComment,
+
+
+
+
   colors,
 }) {
   return (
@@ -51,3 +55,4 @@ const Div = styled.div`
   padding: 20px;
   margin: 10px;
 `;
+

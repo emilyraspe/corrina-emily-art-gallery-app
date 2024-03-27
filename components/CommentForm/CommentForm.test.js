@@ -2,7 +2,6 @@ import {screen, render} from "@testing-library/react";
 import CommentForm from "./CommentForm.js";
 import userEvent from "@testing-library/user-event";
 
-// The detail view has a list of comments for this art piece with the headline "Comments" 🖼️
 
 test("form renders input field and submit button", () => {
     render (<CommentForm></CommentForm>)
