@@ -8,7 +8,6 @@ export default function ArtPieces({ pieces, onToggleFavorite, artPiecesInfo }) {
       {pieces.map((piece) => (
         <li key={piece.slug}>
           <h1>{piece.name}</h1>
-          <p>{piece.colors}</p>
           <p>{piece.artist}</p>
           <Link href={`/art-pieces/${piece.slug}`}>
             <img width={"200px"} src={piece.imageSource} alt={piece.name}></img>
